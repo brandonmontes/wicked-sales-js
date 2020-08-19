@@ -1,6 +1,11 @@
 .product-card {
   width: 18rem;
   margin: 1rem;
+  height: 95%;
+}
+
+img {
+  height: 200px;
 }
 
 .body{
