@@ -30,8 +30,9 @@ class ItemMenu extends React.Component {
               key={products.productsId}
               productsId={products.productsId}
               title={products.title}
-              imageUrl={products.imageUrl}
-              text={products.text}
+              image={products.image}
+              shortDescription={products.shortDescription}
+              longDescription={products.longDescription}
               price={products.price}
             />;
           })
