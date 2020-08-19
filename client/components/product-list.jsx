@@ -23,20 +23,22 @@ class ItemMenu extends React.Component {
 
   render() {
     return (
-      <div>
-        {
-          this.state.products.map(products => {
-            return <ProductListItem
-              key={products.productsId}
-              productsId={products.productsId}
-              title={products.title}
-              image={products.image}
-              shortDescription={products.shortDescription}
-              longDescription={products.longDescription}
-              price={products.price}
-            />;
-          })
-        }
+      <div className='container'>
+        <div className='row'>
+          {
+            this.state.products.map(products => {
+              return <ProductListItem
+                key={products.productId}
+                productsId={products.productId}
+                title={products.name}
+                image={products.image}
+                shortDescription={products.shortDescription}
+                longDescription={products.longDescription}
+                price={products.price}
+              />;
+            })
+          }
+        </div>
       </div>
     );
   }
