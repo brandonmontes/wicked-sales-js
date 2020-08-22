@@ -17,8 +17,10 @@ export default class App extends React.Component {
 
   setView(view, params) {
     this.setState({
-      name: view,
-      params: params
+      view: {
+        name: view,
+        params: params
+      }
     });
   }
 
@@ -29,7 +31,7 @@ export default class App extends React.Component {
         body = <ProductList setView={this.setView} />;
         break;
       case 'details':
-        body = <ProductDetails productId={this.state.view.params} setView={this.setView}/>;
+        body = <ProductDetails productId={this.state.view.params.product} setView={this.setView}/>;
         break;
     }
 
