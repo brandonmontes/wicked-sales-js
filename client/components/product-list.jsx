@@ -28,6 +28,7 @@ class ItemMenu extends React.Component {
           {
             this.state.products.map(products => {
               return <ProductListItem
+                setView={this.props.setView}
                 key={products.productId}
                 productsId={products.productId}
                 title={products.name}
