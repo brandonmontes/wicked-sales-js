@@ -35,6 +35,7 @@ class ItemMenu extends React.Component {
                 shortDescription={products.shortDescription}
                 longDescription={products.longDescription}
                 price={products.price}
+                setView={this.props.setView}
               />;
             })
           }
