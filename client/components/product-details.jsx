@@ -28,14 +28,22 @@ class ProductDetails extends React.Component {
   render() {
     return (
       <div>
-        <div className="card mb-3">
+        <div className="card m-5">
           <div>
-            <button type='button' className='btn btn-light' onClick={this.handleClick}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
+            <button type='button' className='btn btn-light mx-4 mt-3' onClick={this.handleClick}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
           </div>
-          <img src={this.state.product.image} className="card-img-top object-fit" alt={this.state.product.image}></img>
-          <div className="card-body">
-            <h5 className="card-title">{this.state.product.name}</h5>
-            <p>${(this.state.product.price / 100).toFixed(2)}</p>
+          <div className="d-flex flex-wrap m-4">
+            <div>
+              <img src={this.state.product.image} className="card-img-left object-fit" alt={this.state.product.image}></img>
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">{this.state.product.name}</h5>
+              <p>${(this.state.product.price / 100).toFixed(2)}</p>
+              <h6>{this.state.product.shortDescription}</h6>
+              <button type="button" className="btn btn-primary my-3">Add To Cart</button>
+            </div>
+          </div>
+          <div className="mx-4 mb-4">
             <p className="card-text">{this.state.product.longDescription}</p>
           </div>
         </div>
