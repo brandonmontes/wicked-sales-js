@@ -2,7 +2,7 @@ import React from 'react';
 
 function header(props) {
   let cartTotal;
-  if (props.cartItemCount >= 1) {
+  if (props.cartItemCount <= 1) {
     cartTotal = 'Item';
   } else {
     cartTotal = 'Items';

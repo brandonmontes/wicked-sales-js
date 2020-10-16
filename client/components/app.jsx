@@ -42,11 +42,11 @@ export default class App extends React.Component {
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ product })
+      body: JSON.stringify({ productId: product })
     };
     fetch('/api/cart', req)
       .then(res => res.json())
-      .then(data => this.setState({ cart: data }))
+      .then(() => this.getCartItems())
       .catch(err => console.error(err));
   }
 
@@ -64,7 +64,7 @@ export default class App extends React.Component {
     return (
       <div>
         <div>
-          <Header cartItemCount={this.state.cart.length}/>
+          <Header cartItemCount={(this.state.cart.length) + 1}/>
         </div>
         <div className="body">
           <div>
