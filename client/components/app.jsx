@@ -61,7 +61,7 @@ export default class App extends React.Component {
         body = <ProductDetails productId={this.state.view.params.product} setView={this.setView} addToCart={this.addToCart}/>;
         break;
       case 'cart':
-        body = <CartSummary />;
+        body = <CartSummary cartItems={this.state.cart} setView={this.setView}/>;
         break;
     }
 
