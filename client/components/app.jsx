@@ -68,7 +68,7 @@ export default class App extends React.Component {
     return (
       <div>
         <div>
-          <Header cartItemCount={(this.state.cart.length) + 1} setView={this.setView}/>
+          <Header cartItemCount={(this.state.cart.length)} setView={this.setView}/>
         </div>
         <div className="body">
           <div>
