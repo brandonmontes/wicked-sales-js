@@ -19,3 +19,7 @@ img {
 .object-fit{
   object-fit: contain;
 }
+
+.cart-item-card{
+  width: 25%;
+}
