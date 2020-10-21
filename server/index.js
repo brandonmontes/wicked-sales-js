@@ -139,6 +139,34 @@ app.post('/api/cart', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/orders', (req, res, next) => {
+  const cartId = req.session.cartId;
+  const creditCard = parseInt(req.body.creditCard);
+  if (!cartId) {
+    return next(new ClientError('Missing cart session', 400));
+  }
+  if (!req.body.name || !creditCard || !req.body.shippingAddress) {
+    return next(new ClientError('Missing checkout field(s)', 400));
+  }
+  const sql = `
+  insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
+  values ($1, $2, $3, $4)
+  returning *
+  `;
+  const values = [cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
+  db.query(sql, values)
+    .then(result => { res.status(201).json(result.rows[0]); })
+    .then(result => {
+      const sql = `
+      delete from "carts"
+      where "cartId" = $1
+      `;
+      const values = [cartId];
+      db.query(sql, values);
+    })
+    .catch(err => console.error(err));
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
