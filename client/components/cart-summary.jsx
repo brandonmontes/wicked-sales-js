@@ -34,8 +34,13 @@ function CartSummary(props) {
               );
             })
           }
-          <div className="my-3 mx-5">
-            <h4>Item Total: ${(props.cartItems.sum('price') / 100).toFixed(2)}</h4>
+          <div className="d-flex justify-content-between">
+            <div className="my-3 mx-5">
+              <h4>Item Total: ${(props.cartItems.sum('price') / 100).toFixed(2)}</h4>
+            </div>
+            <div>
+              <button type='button' className='btn btn-primary mx-4 mt-3' onClick={() => props.setView('checkout', {})}>Checkout</button>
+            </div>
           </div>
         </div>
       </div>
