@@ -15,7 +15,7 @@ function CartSummary(props) {
       <div>
         <div className="card m-5">
           <div>
-            <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog')}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
+            <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog', {})}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
           </div>
           <div className="mt-3 mx-5">
             <h4>My Cart</h4>
@@ -34,8 +34,13 @@ function CartSummary(props) {
               );
             })
           }
-          <div className="my-3 mx-5">
-            <h4>Item Total: ${(props.cartItems.sum('price') / 100).toFixed(2)}</h4>
+          <div className="d-flex justify-content-between">
+            <div className="my-3 mx-5">
+              <h4>Item Total: ${(props.cartItems.sum('price') / 100).toFixed(2)}</h4>
+            </div>
+            <div>
+              <button type='button' className='btn btn-primary mx-4 mt-3' onClick={() => props.setView('checkout', {})}>Checkout</button>
+            </div>
           </div>
         </div>
       </div>
@@ -45,7 +50,7 @@ function CartSummary(props) {
     <div>
       <div className="card m-5">
         <div>
-          <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog')}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
+          <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog', {})}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
         </div>
         <div className="my-3 mx-5">
           <h4>No Items in Cart</h4>
