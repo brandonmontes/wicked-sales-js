@@ -15,7 +15,7 @@ function CartSummary(props) {
       <div>
         <div className="card m-5">
           <div>
-            <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog')}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
+            <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog', {})}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
           </div>
           <div className="mt-3 mx-5">
             <h4>My Cart</h4>
@@ -45,7 +45,7 @@ function CartSummary(props) {
     <div>
       <div className="card m-5">
         <div>
-          <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog')}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
+          <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog', {})}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
         </div>
         <div className="my-3 mx-5">
           <h4>No Items in Cart</h4>
