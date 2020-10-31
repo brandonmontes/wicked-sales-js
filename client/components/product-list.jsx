@@ -24,7 +24,7 @@ class ItemMenu extends React.Component {
   render() {
     return (
       <div className='container'>
-        <div className='row'>
+        <div className='d-flex justify-content-center flex-wrap'>
           {
             this.state.products.map(products => {
               return <ProductListItem
