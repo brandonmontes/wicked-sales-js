@@ -24,7 +24,7 @@ function CartSummary(props) {
             props.cartItems.map(cartItems => {
               return (
                 <CartItems
-                  key={cartItems.productId}
+                  key={cartItems.cartItemId}
                   productsId={cartItems.productId}
                   title={cartItems.name}
                   image={cartItems.image}
