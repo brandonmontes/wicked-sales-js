@@ -12,7 +12,7 @@ function CartSummary(props) {
 
   if (props.cartItems.length !== 0) {
     return (
-      <div>
+      <div className="phone-cart-margins">
         <div className="card m-3">
           <div>
             <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog', {})}><i className="fas fa-arrow-left"></i> Back to Catalog</button>

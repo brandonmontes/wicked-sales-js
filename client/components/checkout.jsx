@@ -44,7 +44,7 @@ class CheckoutForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="phone-cart-margins">
         <div className="card m-3 p-3">
           <div>
             <h1>Checkout</h1>
