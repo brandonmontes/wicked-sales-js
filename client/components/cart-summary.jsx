@@ -12,8 +12,8 @@ function CartSummary(props) {
 
   if (props.cartItems.length !== 0) {
     return (
-      <div>
-        <div className="card m-5">
+      <div className="phone-cart-margins">
+        <div className="card m-3">
           <div>
             <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => props.setView('catalog', {})}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
           </div>
@@ -24,7 +24,7 @@ function CartSummary(props) {
             props.cartItems.map(cartItems => {
               return (
                 <CartItems
-                  key={cartItems.productId}
+                  key={cartItems.cartItemId}
                   productsId={cartItems.productId}
                   title={cartItems.name}
                   image={cartItems.image}
@@ -34,12 +34,12 @@ function CartSummary(props) {
               );
             })
           }
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center">
             <div className="my-3 mx-5">
-              <h4>Item Total: ${(props.cartItems.sum('price') / 100).toFixed(2)}</h4>
+              <h5>Item Total: ${(props.cartItems.sum('price') / 100).toFixed(2)}</h5>
             </div>
             <div>
-              <button type='button' className='btn btn-primary mx-4 mt-3' onClick={() => props.setView('checkout', {})}>Checkout</button>
+              <button type='button' className='btn btn-primary mx-4' onClick={() => props.setView('checkout', {})}>Checkout</button>
             </div>
           </div>
         </div>

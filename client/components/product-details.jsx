@@ -28,7 +28,7 @@ class ProductDetails extends React.Component {
   render() {
     return (
       <div>
-        <div className="card m-5">
+        <div className="card phone-card">
           <div>
             <button type='button' className='btn btn-light mx-4 mt-3' onClick={this.handleClick}><i className="fas fa-arrow-left"></i> Back to Catalog</button>
           </div>

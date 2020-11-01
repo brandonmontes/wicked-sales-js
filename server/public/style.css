@@ -23,3 +23,121 @@ img {
 .cart-item-card{
   width: 25%;
 }
+
+/* Iphone SE Potrait */
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    img {
+      width: 238px;
+    }
+
+    .phone-card{
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    img {
+      width: 486px;
+    }
+
+    .phone-card{
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-card{
+      width: 14rem;
+    }
+}
+
+/* Ipone X Potrait */
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    img {
+      width: 229px;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    img {
+      width: 762px;
+    }
+
+    .phone-card{
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+}
+
+/* Ipad Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    img {
+      width: 718px;
+    }
+
+    .phone-card{
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+}
+
+/* Landscape */
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .phone-card{
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-card{
+      width: 14rem;
+    }
+}
+
+/* Desktop 1900x950 */
+
+@media only screen
+  and (min-device-width: 1900px){
+    .phone-cart-margins{
+      margin-left: 6rem;
+      margin-right: 6rem;
+    }
+    .phone-card{
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
