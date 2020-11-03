@@ -11,6 +11,7 @@ function CartSummary(props) {
   };
 
   if (props.cartItems.length !== 0) {
+
     return (
       <div className="phone-cart-margins">
         <div className="card m-3">
@@ -46,6 +47,7 @@ function CartSummary(props) {
       </div>
     );
   }
+
   return (
     <div>
       <div className="card m-5">
