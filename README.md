@@ -68,4 +68,4 @@ A Full Stack Node.js and React Shopping Cart
     
 ## Preview
 
-![Wicked-Sales-Preview](assets/wicked-sales.gif)
+![Wicked-Sales-Preview](/wicked-sales.gif)
