@@ -90,8 +90,8 @@ app.post('/api/cart', (req, res, next) => {
         );
       } else {
         const sql = `
-           insert into "carts"("cartId", "createdAt")
-              values(default, default)
+           insert into "carts" ("cartId", "createdAt")
+              values (default, default)
               returning "cartId";
              `;
         return db.query(sql)
@@ -141,11 +141,10 @@ app.post('/api/cart', (req, res, next) => {
 
 app.post('/api/orders', (req, res, next) => {
   const cartId = req.session.cartId;
-  const creditCard = parseInt(req.body.creditCard);
   if (!cartId) {
     return next(new ClientError('Missing cart session', 400));
   }
-  if (!req.body.name || !creditCard || !req.body.shippingAddress) {
+  if (!req.body.name || !req.body.creditCard || !req.body.shippingAddress) {
     return next(new ClientError('Missing checkout field(s)', 400));
   }
   const sql = `
@@ -160,12 +159,27 @@ app.post('/api/orders', (req, res, next) => {
       const sql = `
       delete from "carts"
       where "cartId" = $1
+      returning *
       `;
       const values = [cartId];
-      db.query(sql, values);
+      db.query(sql, values)
+        .then(secondResult => { res.json(secondResult.rows[0]); })
+        .then(secondResult => {
+          const sql = `
+          delete from "cartItems"
+          where "cartId" = $1
+          returning *
+          `;
+          const values = [cartId];
+          db.query(sql, values)
+            .then(thirdResult => res.json(thirdResult.rows[0]))
+            .catch(err => console.error(err));
+        })
+        .catch(err => console.error(err));
     })
     .catch(err => console.error(err));
-});
+}
+);
 
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
