@@ -42,6 +42,12 @@ class CheckoutForm extends React.Component {
     }
   }
 
+  // verifyCheckout(){
+  //   if(this.state.name !== "" || this.state.creditCard !=="" || this.state.shippingAddress!==""){
+
+  //   }
+  // }
+
   render() {
     return (
       <div className="phone-cart-margins">
@@ -76,7 +82,7 @@ class CheckoutForm extends React.Component {
                 <button type='button' className='btn btn-light mx-4 mt-3' onClick={() => this.props.setView('catalog', {})}><i className="fas fa-arrow-left"></i> Continue Shopping</button>
               </div>
               <div>
-                <button type='button' className='btn btn-primary mx-4 mt-3' onClick={() => this.props.placeOrder(this.state.name, this.state.creditCard, this.state.shippingAddress)}>Place Order</button>
+                <button type='button' className='btn btn-primary mx-4 mt-3' disabled={!this.state.name || !this.state.creditCard || !this.state.shippingAddress} onClick={() => this.props.placeOrder(this.state.name, this.state.creditCard, this.state.shippingAddress)}>Place Order</button>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import React from 'react';
 function itemCard(props) {
   return (
     <div>
-      <div className="card product-card" onClick={() => props.setView('details', { product: props.productsId })}>
+      <div className="card product-card chosen-product" onClick={() => props.setView('details', { product: props.productsId })}>
         <img src={props.image} className="card-img-top object-fit" alt={props.image}></img>
         <div className="card-body">
           <h5 className="card-title">{props.title}</h5>
