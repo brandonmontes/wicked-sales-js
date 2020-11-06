@@ -2,6 +2,7 @@
   width: 18rem;
   margin: 1rem;
   height: 95%;
+  cursor: pointer;
 }
 
 body {
@@ -22,6 +23,16 @@ img {
 
 .cart-item-card{
   width: 25%;
+}
+
+.cart-button {
+  cursor: pointer;
+}
+
+.chosen-product:hover{
+  width: 19rem;
+  height: 98%;
+  box-shadow: 1px -2px 18px #607D8B;
 }
 
 /* Iphone SE Potrait */
